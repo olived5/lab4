@@ -5,6 +5,7 @@
 
 #include "../generalScheduler/RequestScheduler_DIRECT.h"
 #include "../system/FRFCFS/RequestScheduler_FRFCFS.h"
+#include "../system/FRFCFS_THRESHOLD/RequestScheduler_FRFCFS_THRESHOLD.h"
 #include "../system/FRFCFS_Batch/RequestScheduler_FRFCFS_Batching.h"
 #include "../system/FCFS/RequestScheduler_FCFS.h"
 #include "../generalScheduler/CommandScheduler_FCFS.h"
@@ -46,6 +47,7 @@ namespace MCsim
 			requestSchedulerTable["RR"] = new RequestScheduler_RR(requestQueues, commandQueues, requestorTable, dataBus);
 			requestSchedulerTable["FCFS"] = new RequestScheduler_FCFS(requestQueues, commandQueues, requestorTable, dataBus);
 			requestSchedulerTable["FRFCFS"] = new RequestScheduler_FRFCFS(requestQueues, commandQueues, requestorTable);
+            requestSchedulerTable["FRFCFS_THRESHOLD"] = new RequestScheduler_FRFCFS_THRESHOLD(requestQueues, commandQueues, requestorTable);
 			requestSchedulerTable["FRFCFS_Batching"] = new RequestScheduler_FRFCFS_BATCHING(requestQueues, commandQueues, requestorTable);
 			requestSchedulerTable["BLISS"] = new RequestScheduler_BLISS(requestQueues, commandQueues, requestorTable, dataBus);
 			requestSchedulerTable["PARBS"] = new RequestScheduler_PARBS(requestQueues, commandQueues, requestorTable, dataBus);
